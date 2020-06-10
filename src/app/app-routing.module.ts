@@ -8,8 +8,31 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'models',
     pathMatch: 'full'
+  },
+  {
+    path: 'proveedores',
+    loadChildren: () => import('./proveedores/proveedores.module').then( m => m.ProveedoresPageModule)
+  },
+  {
+    path: 'models',
+      children:[
+        {
+          path: "",
+          loadChildren: () => import('./models/models.module').then( m => m.ModelsPageModule)
+        },
+        {
+          path:":modelId",
+          loadChildren:() => import('./models/model-detail/model-detail.module').then(m=>m.ModelDetailPageModule)
+        }
+      ]
+
+    
+  },
+  {
+    path: 'materials',
+    loadChildren: () => import('./materials/materials.module').then( m => m.MaterialsPageModule)
   },
 ];
 

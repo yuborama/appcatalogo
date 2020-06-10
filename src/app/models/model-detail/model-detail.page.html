@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="models"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{model.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid >
+    <ion-row>
+      <ion-col class="ion-no-padding">
+          <ion-img [src]="model.imageURL" class="ion-no-padding">
+          </ion-img>
+          <ion-label ><h1 class="ion-text-right">{{model.nombre}}</h1></ion-label>
+          <ion-list *ngIf="model.materials && model.materials.length>0">
+            <ion-item *ngFor ="let material of model.materials">
+              {{material}}
+            </ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
