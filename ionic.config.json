@@ -1,0 +1,7 @@
+{
+  "name": "protectopicos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
