@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="models"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo modelo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col>
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">
+            referencia
+          </ion-label>
+          <ion-input type="text" #ref></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            Nombre
+          </ion-label>
+          <ion-input type="text" #nombre></ion-input>
+        </ion-item>     
+        <ion-item>
+          <ion-label position="floating">
+            Ganacia
+          </ion-label>
+          <ion-input type="text" #nombre></ion-input>
+        </ion-item>  
+        <ion-card>
+          <ion-card-header>
+            Gastos
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">
+                material
+              </ion-label>
+              <ion-input type="text" #material></ion-input>
+            </ion-item> 
+            <ion-item>
+              <ion-label position="floating">
+                precio
+              </ion-label>
+              <ion-input type="number" #valor></ion-input>
+            </ion-item>     
+          </ion-card-content>
+          <ion-button (click)="addg(material,valor)"><ion-icon name="add-circle-outline" ></ion-icon>Agregar</ion-button>
+        </ion-card>
+        <ion-row id="lgastos">
+
+        </ion-row>
+        <ion-button>Guardar<ion-icon name="save-outline"></ion-icon></ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>

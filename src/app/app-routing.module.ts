@@ -27,13 +27,15 @@ const routes: Routes = [
           loadChildren:() => import('./models/model-detail/model-detail.module').then(m=>m.ModelDetailPageModule)
         }
       ]
-
-    
   },
   {
     path: 'materials',
     loadChildren: () => import('./materials/materials.module').then( m => m.MaterialsPageModule)
   },
+  {
+    path:'new-model',
+    loadChildren: ()=> import('./models/new-model/new-model.module').then(m=> m.NewModelPageModule) 
+  }
 ];
 
 @NgModule({
