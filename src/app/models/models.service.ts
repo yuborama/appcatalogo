@@ -10,13 +10,17 @@ export class ModelsService {
         id: '1',
         nombre: 'chaqueta',
         imageURL: 'https://www.pamotos.com/8554-large_default/chaqueta-sm-racewear-riga-.jpg',
-        materials: ['hilo', 'neopreno']
+        ganancia: '2000',
+        precio:'65000',
+        materials: ['hilo $200', 'neopreno $5000','mano obra $7000', 'neopreno $5000','mano obra $7000']
       },
       {
         id: '2',
         nombre: 'otra chaqueta',
         imageURL: 'https://bycity.es/wp-content/uploads/2017/07/Spring_Man_0002__DSC2455.jpg',
-        materials: ['hilo', 'neopreno']
+        ganancia: '4000',
+        precio:'150000',
+        materials: ['hilo $1000', 'tela impermeable $30000']
       }
     ]
 
@@ -32,11 +36,13 @@ export class ModelsService {
     }
   }
 
-  addmodel(nombre: string, imageURL: string) {
+  addmodel(nombre: string, imageURL: string,ganancia:string,precio:string) {
     this.models.push({
       nombre,
       imageURL,
       id: this.models.length + 1 + "",
+      ganancia,
+      precio,
       materials: []
     })
 
